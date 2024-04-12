@@ -5,6 +5,16 @@ main .banner {
   margin: 0 auto;
 }
 
+@font-face {
+  font-family: 'CustomFont';
+  src: url('C:\Users\Ajay Chavan\Desktop\edgelogic\new-edge-project\fonts\Caveat-VariableFont_wght.ttf') format('truetype');
+}
+
+h1, h2, h3 {
+  font-family: 'Caveat', sans-serif;
+  font-style: italic;
+}
+
 main .banner.is-loaded {
   opacity: 1;
   min-height: 0;
@@ -25,8 +35,9 @@ main .banner-text {
 }
 
 main .banner img {
-  width: 100px;
+  width: 150px;
   max-width: unset;
+  height: 200px;
 }
 
 main .banner .banner-text h3,
@@ -46,4 +57,6 @@ main .banner .banner-text h3 {
 main .banner .banner-text p {
   font-size: var(--body-font-size-s);
   margin: 16px 0;
+  font-family: Georgia, serif;
+  font-style: italic;
 }

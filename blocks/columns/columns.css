@@ -3,8 +3,24 @@
   flex-direction: column;
 }
 
+.columns-2-cols h1 {
+  font-family: 'Caveat', cursive;
+  font-style: italic;
+}
+
+.columns p strong{
+  font-family: 'Caveat', cursive; /* Add a font to the <p> elements */
+  font-style: italic  ;
+}
+
+.columns p {
+  font-family: 'Caveat', cursive; /* Add a font to the <p> elements */
+  font-style: italic  ;
+}
+
 .columns img {
   width: 100%;
+  height: 300%;
 }
 
 .columns > div > div {
@@ -16,7 +32,9 @@
 }
 
 .columns > div > .columns-img-col img {
-  display: block;
+  width: 600px;
+  height: 580px;
+  object-fit: cover;
 }
 
 @media (min-width: 900px) {
@@ -31,3 +49,4 @@
     order: unset;
   }
 }
+

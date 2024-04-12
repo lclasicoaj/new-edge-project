@@ -1,3 +1,12 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust the height as needed */
+  padding: 0 20px; /* Adjust the padding as needed */
+  padding-left: 35%;
+}
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -8,16 +17,30 @@
 }
 
 .cards > ul > li {
-  border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
+  border: 1px solid #e2e8f0; /* Use a specific color or variable */
+  background-color: #fff; /* Use a specific color or variable */
+  justify-content: center;
+  border-radius: 8px; /* Add border-radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box-shadow */
 }
 
 .cards .cards-card-body {
   margin: 16px;
+  text-align: center;
 }
 
 .cards .cards-card-image {
   line-height: 0;
+  padding-top: 0; /* Adjust padding as needed */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%; /* Make the image round */
+  /* background-color: rgb(37, 156, 134); */
+  width: 50%; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  padding-left: 25%;
+  padding-top: 5%;
 }
 
 .cards .cards-card-body > *:first-child {
@@ -25,7 +48,8 @@
 }
 
 .cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  width: 100%; /* Adjust the width as needed */
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
   object-fit: cover;
+  border-radius: 50%; /* Make the image round */
 }

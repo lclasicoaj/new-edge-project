@@ -1,63 +1,212 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+.carousel .carousel-slides-container {
+  position: relative;
+  width: 80vw;
+}
+
+.carousel .carousel-slides,
+.carousel .carousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   
-  body {
-    height: 100vh;
-    display: grid;
-    place-items: center;
-  }
+}
+
+.carousel .carousel-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
   
-  .slider {
-    width: 100%;
-    max-width: 960px;
-    height: 450px;
-    position: relative;
-    overflow: hidden; 
-    border-radius: 15px;
-    margin: auto;
-  }
-  
-  .slide {
-    width: 100%;
-    max-width: 960px;
-    height: 350px;
-    position: absolute;
-    transition: all 0.5s;
+}
+
+.carousel .carousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel .carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 10rem;
+}
+
+.carousel .carousel-slide:has(.carousel-slide-content[data-align="center"]) {
+  align-items: center;
+}
+
+.carousel .carousel-slide:has(.carousel-slide-content[data-align="right"]) {
+  align-items: flex-end;
+}
+
+.carousel .carousel-slide .carousel-slide-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+}
+
+.carousel .carousel-slide .carousel-slide-image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .carousel-slide .carousel-slide-image picture > img {
+  height: 200%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel .carousel-slide-content p a[href="https://en.wikipedia.org/wiki/HTTPS"] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(73, 36, 141, 0.25);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.75rem;
+}
+
+.carousel .carousel-slide-content p a[href="https://en.wikipedia.org/wiki/HTTPS"]:hover,
+.carousel .carousel-slide-content p a[href="https://en.wikipedia.org/wiki/HTTPS"]:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .carousel-slide-content p a[href="https://www.youtube.com/"] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(73, 36, 141, 0.25);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.75rem;
+}
+
+.carousel .carousel-slide-content p a[href="https://www.youtube.com/"]:hover,
+.carousel .carousel-slide-content p a[href="https://www.youtube.com/"]:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.carousel .carousel-slide .carousel-slide-content {
+  z-index: 1;
+  padding: 1rem;
+  margin: 1.5rem 3rem;
+  color: white;
+  background-color: rgba(0 0 0 / 50%);
+  position: relative;
+  width: 50rem;
+}
+
+.carousel .carousel-slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.carousel .carousel-slide-indicator button {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border-radius: 1rem;
+  background-color: rgba(0 0 0 / 25%);
+}
+
+.carousel .carousel-slide-indicator button:disabled,
+.carousel .carousel-slide-indicator button:hover,
+.carousel .carousel-slide-indicator button:focus-visible {
+  background-color: rgba(0 0 0 / 80%);
+}
+
+.carousel .carousel-slide-indicator span,
+.carousel .carousel-navigation-buttons span {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.carousel .carousel-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel .carousel-navigation-buttons button {
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  background-color: rgba(0 0 0 / 25%);
+}
+
+.carousel .carousel-navigation-buttons button:hover,
+.carousel .carousel-navigation-buttons button:focus-visible {
+  background-color: rgba(0 0 0 / 80%);
+}
+
+.carousel .carousel-navigation-buttons button::after {
+  display: block;
+  content: "";
+  border: 3px white solid;
+  border-bottom: 0;
+  border-left: 0;
+  height: 0.75rem;
+  width: 0.75rem;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 3px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel .carousel-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%)  rotate(45deg);
+  left: calc(50% - 3px);
+}
+
+@media (width >= 600px) {
+  .carousel .carousel-navigation-buttons {
+    left: 1rem;
+    right: 1rem;
   }
 
-  div.slide-text{
-    position: absolute;
-    width: 100%;
-    top:60%;
-    color: #fff;
-    text-align: center;
+  .carousel .carousel-navigation-buttons button {
+    width: 3rem;
+    height: 3rem;
   }
-  
-  .btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    z-index: 10;
-    cursor: pointer;
-    background-color: #fff;
-    font-size: 18px;
-    color: black;
+
+  .carousel .carousel-navigation-buttons button::after {
+    width: 1rem;
+    height: 1rem;
   }
-  .btn:active {
-    *transform: scale(1.1);
+
+  .carousel .carousel-slide .carousel-slide-content {
+    --slide-content-width: 50%;
+
+    margin: 2.5rem 5rem;
   }
-  .btn-prev {
-    top: 45%;
-    left: 2%;
+
+  .carousel .carousel-slide .carousel-slide-content[data-align="justify"] {
+    --slide-content-width: auto;
   }
-  
-  .btn-next {
-    top: 45%;
-    right: 2%;
-  }
+}
